@@ -50,7 +50,7 @@ class HeroesTest {
 
     @Test
     void unHeroeSinNingunaArmaEquipadaPeleaUsandoSusPunios() {
-        Heroe guerreroSinArma = new Guerrero(new Punios(), 10);
+        Heroe guerreroSinArma = new Guerrero(null, 10);
 
         Arma ballesta = new Ballesta(3, true);
         Heroe rival = new Cazador(ballesta);

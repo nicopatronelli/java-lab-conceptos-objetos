@@ -10,6 +10,6 @@ public class Cazador extends Heroe {
 
 	@Override
 	public int puntosDeAtaque() {
-		return this.arma.puntosDeDanio() / 2;
+		return this.arma != null ? this.arma.puntosDeDanio() / 2 : 0;
 	}
 }
