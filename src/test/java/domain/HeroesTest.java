@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.stream.IntStream;
+
 import org.junit.jupiter.api.Test;
 
 import domain.arma.Arma;
@@ -41,5 +43,18 @@ class HeroesTest {
 
         cazador.pelearCon(guerrero);
         assertEquals(55, guerrero.energia());
+    }
+
+    @Test
+    void unHeroeSinNingunaArmaEquipadaPeleaUsandoSusPunios() {
+        Heroe guerreroSinArma = new Guerrero(null, 10);
+
+        Arma ballesta = new Ballesta(3, true);
+        Heroe rival = new Cazador(ballesta);
+
+        IntStream.rangeClosed(1, 5).forEach(i -> guerreroSinArma.pelearCon(rival));
+
+        assertEquals(90, rival.energia());
+        assertEquals(95, guerreroSinArma.energia());
     }
 }

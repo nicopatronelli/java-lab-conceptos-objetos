@@ -2,13 +2,17 @@ package domain.heroe.tipo;
 
 import domain.arma.Arma;
 import domain.heroe.Heroe;
+import domain.heroe.excepcion.FuerzaInicialInsuficienteException;
 
 public class Guerrero extends Heroe {
 	private int fuerza;
 
-	public Guerrero(Arma arma, int fuerza) {
+	public Guerrero(Arma arma, int fuerzaInicial) {
 		super(arma);
-		this.fuerza = fuerza;
+		if (fuerzaInicial < 10) {
+			throw new FuerzaInicialInsuficienteException("La fuerza inicial deber ser igual o mayor a 10.");
+		}
+		this.fuerza = fuerzaInicial;
 	}
 
 	@Override
