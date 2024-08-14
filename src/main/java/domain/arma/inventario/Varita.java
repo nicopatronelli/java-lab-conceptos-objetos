@@ -3,6 +3,7 @@ package domain.arma.inventario;
 import domain.arma.Arma;
 import domain.heroe.Heroe;
 
+// Inmutable
 public class Varita implements Arma {
 	@Override
 	public int puntosDeDanio() {
@@ -10,7 +11,7 @@ public class Varita implements Arma {
 	}
 
 	@Override
-	public void inflingirDanioA(Heroe rival, int puntosAtaqueHeroe) {
+	public void inflingirDanioA(Heroe heroe, Heroe rival, int puntosAtaqueHeroe) {
 		rival.recibirDanio(puntosAtaqueHeroe);
 	}
 }

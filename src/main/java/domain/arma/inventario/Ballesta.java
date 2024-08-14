@@ -18,7 +18,7 @@ public class Ballesta implements Arma {
 	}
 
 	@Override
-	public void inflingirDanioA(Heroe rival, int puntosAtaqueHeroe) {
+	public void inflingirDanioA(Heroe heroe, Heroe rival, int puntosAtaqueHeroe) {
 		if (saetas > 0) {
 			rival.recibirDanio(puntosAtaqueHeroe);
 			saetas--;

@@ -17,13 +17,7 @@ public abstract class Heroe {
 	}
 
 	public void pelearCon(Heroe rival) {
-		if (arma != null) {
-			arma.inflingirDanioA(rival, this.puntosDeAtaque());
-		} else {
-			rival.recibirDanio(2);
-			int energiaRestante = energia - 1;
-			energia = energiaRestante >= 0 ? energiaRestante : 0;
-		}
+		arma.inflingirDanioA(this, rival, this.puntosDeAtaque());
 	}
 
 	protected abstract int puntosDeAtaque();
