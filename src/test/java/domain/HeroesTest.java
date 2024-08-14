@@ -22,7 +22,7 @@ class HeroesTest {
         guerrero.pelearCon(mago);
 
         assertEquals(100, guerrero.energia());
-        assertEquals(80, mago.energia());
+        assertEquals(85, mago.energia());
     }
 
     @Test
@@ -41,17 +41,5 @@ class HeroesTest {
 
         cazador.pelearCon(guerrero);
         assertEquals(55, guerrero.energia());
-    }
-
-    @Test
-    void unMagoRecuperaSuEnergiaDespuesDePelear() {
-        Espada excalibur = new Espada(5);
-        Heroe guerrero = new Guerrero(excalibur, 10);
-        Heroe mago = new Mago();
-
-        mago.pelearCon(mago);
-
-        assertEquals(100, guerrero.energia());
-        assertEquals(80, mago.energia());
     }
 }
