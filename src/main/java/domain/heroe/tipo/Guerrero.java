@@ -24,6 +24,6 @@ public class Guerrero extends Heroe {
 
 	@Override
 	public int puntosDeAtaque() {
-		return fuerza + (arma != null ? arma.puntosDeDanio() : 0);
+		return fuerza + arma.puntosDeDanio();
 	}
 }
