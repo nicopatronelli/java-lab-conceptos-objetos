@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import domain.arma.Arma;
 import domain.arma.inventario.Ballesta;
 import domain.arma.inventario.Espada;
+import domain.arma.inventario.Punios;
 import domain.heroe.excepcion.FuerzaInicialInsuficienteException;
 import domain.heroe.tipo.Cazador;
 import domain.heroe.tipo.Guerrero;
@@ -49,7 +50,7 @@ class HeroesTest {
 
     @Test
     void unHeroeSinNingunaArmaEquipadaPeleaUsandoSusPunios() {
-        Heroe guerreroSinArma = new Guerrero(null, 10);
+        Heroe guerreroSinArma = new Guerrero(new Punios(), 10);
 
         Arma ballesta = new Ballesta(3, true);
         Heroe rival = new Cazador(ballesta);
@@ -64,6 +65,6 @@ class HeroesTest {
     void unGuerreroNoPuedeCrearseConUnaFuerzaInicialMenorA10() {
         assertThrows(
                 FuerzaInicialInsuficienteException.class,
-                () -> new Guerrero(null, 5));
+                () -> new Guerrero(new Punios(), 5));
     }
 }
