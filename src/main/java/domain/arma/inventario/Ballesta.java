@@ -8,8 +8,8 @@ public class Ballesta implements Arma {
 	private final boolean esDeLargaDistancia;
 
 	public Ballesta(int cantidadSaetas, boolean esDeLargaDistancia) {
-		this.esDeLargaDistancia = esDeLargaDistancia;
 		this.saetas = cantidadSaetas;
+		this.esDeLargaDistancia = esDeLargaDistancia;
 	}
 
 	@Override
@@ -18,9 +18,9 @@ public class Ballesta implements Arma {
 	}
 
 	@Override
-	public void inflingirDanioA(Heroe heroe, Heroe rival, int puntosAtaqueHeroe) {
+	public void inflingirDanioA(Heroe heroe, Heroe rival) {
 		if (saetas > 0) {
-			rival.recibirDanio(puntosAtaqueHeroe);
+			rival.recibirDanio(heroe.puntosDeAtaque());
 			saetas--;
 		}
 	}

@@ -24,6 +24,10 @@ public class Guerrero extends Heroe {
 
 	@Override
 	public int puntosDeAtaque() {
-		return fuerza + arma.puntosDeDanio();
+		// Dado que modelamos el pelear con los puños usando null
+		// tenemos que chequear que el arma no sea null antes de
+		// enviarle el mensaje puntosDeDanio, sino podríamos
+		// obtener una NullPointerException
+		return fuerza + (this.arma != null ? this.arma.puntosDeDanio() : 0);
 	}
 }

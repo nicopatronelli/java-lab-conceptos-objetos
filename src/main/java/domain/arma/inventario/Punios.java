@@ -11,8 +11,8 @@ public class Punios implements Arma {
 	}
 
 	@Override
-	public void inflingirDanioA(Heroe heroe, Heroe rival, int puntosAtaqueHeroe) {
-		rival.recibirDanio(puntosAtaqueHeroe);
+	public void inflingirDanioA(Heroe heroe, Heroe rival) {
+		rival.recibirDanio(heroe.puntosDeAtaque());
 		heroe.recibirDanio(1);
 	}
 }

@@ -20,8 +20,8 @@ public class Mago extends Heroe {
 	@Override
 	public void recibirDanio(int danio) {
 		super.recibirDanio(danio);
-		energia += 5;
 		//if (NUMERO_ALEATORIO.nextInt(2) == 1){
+		energia += 5;
 		//}
 	}
 }

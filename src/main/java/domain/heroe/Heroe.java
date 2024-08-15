@@ -17,23 +17,26 @@ public abstract class Heroe {
 	}
 
 	public void pelearCon(Heroe rival) {
+		// Dado que un heroe puede no estar equipado con un arma
+		// hacemos el check por null para saber si posee una, pues
+		// en esta versión decidimos modelar a la "ausencia" de arma con null
+		// Notar como esta opción obliga a tener un if-else y además
+		// a repetir código de validación de energía similar al método recibirDanio()
 		if (arma != null) {
-			arma.inflingirDanioA(this, rival, this.puntosDeAtaque());
+			arma.inflingirDanioA(this, rival);
 		} else {
+			// Para poder utilizar esta solución tuvimos que modificar
+			// el método puntosDeAtaque() de los heroes (revisarlos)
 			rival.recibirDanio(this.puntosDeAtaque() + 2);
 			int energiaRestante = energia - 1;
 			energia = energiaRestante >= 0 ? energiaRestante : 0;
 		}
 	}
 
-	protected abstract int puntosDeAtaque();
+	public abstract int puntosDeAtaque();
 
 	public void recibirDanio(int danio) {
 		int energiaRestante = energia - danio;
-		if (energiaRestante >= 0) {
-			energia = energiaRestante;
-		} else {
-			energia = 0;
-		}
+		energia = energiaRestante >= 0 ? energiaRestante : 0;
 	}
 }
