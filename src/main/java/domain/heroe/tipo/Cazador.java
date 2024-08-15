@@ -12,7 +12,7 @@ public class Cazador extends Heroe {
 	public int puntosDeAtaque() {
 		// Dado que modelamos el pelear con los puños usando null
 		// tenemos que chequear que el arma no sea null antes de
-		// enviarle el mensaje puntosDeDanio, sino podríamos
+		// enviarle el mensaje puntosDeDanio(), sino podríamos
 		// obtener una NullPointerException
 		return this.arma != null ? this.arma.puntosDeDanio() / 2 : 0;
 	}

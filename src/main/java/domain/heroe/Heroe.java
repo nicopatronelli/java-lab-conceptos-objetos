@@ -20,9 +20,10 @@ public abstract class Heroe {
 		// Dado que un heroe puede no estar equipado con un arma
 		// hacemos el check por null para saber si posee una, pues
 		// en esta versión decidimos modelar a la "ausencia" de arma con null
-		// Notar como esta opción obliga a tener un if-else y además
+		// Notar como esta opción nos obliga a tener un if-else y además
 		// a repetir código de validación de energía similar al método recibirDanio()
 		if (arma != null) {
+			// Los heroes delegan en sus armas el inflingir daño a su oponente (usamos composición + delegación)
 			arma.inflingirDanioA(this, rival);
 		} else {
 			// Para poder utilizar esta solución tuvimos que modificar

@@ -3,7 +3,9 @@ package domain.arma.inventario;
 import domain.arma.Arma;
 import domain.heroe.Heroe;
 
-// Inmutable
+// Las instancias de Espada son inmutables porque una vez construidos
+// los objetos no pueden cambiar su estado (conformado solamente
+// por su atributo de instancia filo)
 public class Espada implements Arma {
 	private final int filo;
 

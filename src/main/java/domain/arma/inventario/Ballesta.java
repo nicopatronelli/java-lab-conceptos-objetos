@@ -3,6 +3,9 @@ package domain.arma.inventario;
 import domain.arma.Arma;
 import domain.heroe.Heroe;
 
+// Las instancias de Ballesta son mutables, pues su estado interno
+// puede cambiar una vez construidas: las seatas se van descontando
+// conforme a su uso
 public class Ballesta implements Arma {
 	private int saetas;
 	private final boolean esDeLargaDistancia;
